@@ -1,5 +1,5 @@
 # UserNexus 👨‍💼📄
-## A Simple and Efficient User Management Web Application, created using Java, JSP, Servlet, Postgresql.
+### A Simple and Efficient User Management Web Application, created using Java, JSP, Servlet, Postgresql.
 
 UserNexus is a lightweight, yet powerful user management web application, built using Java, JSP, Servlets, JDBC, HTML, CSS, and JavaScript. It provides essential CRUD (Create, Read, Update, Delete) functionalities to efficiently manage user data, making it ideal for learning, small-scale applications, and enterprise-level integrations.
 
