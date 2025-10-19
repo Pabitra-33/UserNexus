@@ -27,14 +27,14 @@ public class UserController {
 
 	// REST End-points
 
-	// ✅ CREATE
+	// ✅ CREATE A NEW USER OPERATION
 	@PostMapping
 	public ResponseEntity<User> addUser(@RequestBody User user) {
 		User newUser = userService.createUser(user);
 		return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
 	}
 
-	// ✅ READ ALL
+	// ✅ READ ALL USERS
 	@GetMapping
 	public ResponseEntity<List<User>> getAllUsers() {
 		List<User> users = userService.readAllUsers();
@@ -44,14 +44,14 @@ public class UserController {
 		return ResponseEntity.ok(users);
 	}
 
-	// ✅ READ BY ID
+	// ✅ READ BY USER BY ID
 	@GetMapping("/{id}")
 	public ResponseEntity<User> getUserById(@PathVariable Integer id) {
 		Optional<User> user = userService.getUserById(id);
 		return user.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
 	}
 
-	// ✅ UPDATE
+	// ✅ UPDATE A USER BY ID
 	@PutMapping("/{id}")
 	public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User userDetails) {
 		User updatedUser = userService.updateUser(id, userDetails);
@@ -61,7 +61,7 @@ public class UserController {
 		return ResponseEntity.ok(updatedUser);
 	}
 
-	// ✅ DELETE
+	// ✅ DELETE BY ID
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteUser(@PathVariable Integer id) {
 		boolean isDeleted = userService.deleteUser(id);
